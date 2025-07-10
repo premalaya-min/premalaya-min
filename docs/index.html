@@ -41,14 +41,12 @@
   <nav class="w-full bg-white shadow sticky top-0 z-30">
     <div class="container mx-auto flex items-center justify-between py-3 px-4">
       <a class="flex items-center" href="http://www.premalayamin.com">
-        <span class="font-extrabold text-2xl md:text-3xl tracking-wide text-gray-800 select-none">
-          Premalaya Ministries
-        </span>
+        <img src="assets/img/edslogo.png" alt="Premalaya Logo" class="h-12 w-auto mr-2" />
       </a>
-      <button class="md:hidden text-primary focus:outline-none" onclick="document.getElementById('nav-menu').classList.toggle('hidden')">
+      <button id="nav-toggle" class="md:hidden text-primary focus:outline-none" aria-label="Open Menu" aria-expanded="false" aria-controls="nav-menu">
         <span class="fa fa-bars text-2xl"></span>
       </button>
-      <ul id="nav-menu" class="hidden md:flex space-x-2 lg:space-x-4 font-heading font-semibold text-base items-center mt-4 md:mt-0">
+      <ul id="nav-menu" class="hidden flex-col md:flex md:flex-row space-y-2 md:space-y-0 space-x-0 md:space-x-2 lg:space-x-4 font-heading font-semibold text-base items-center mt-4 md:mt-0 bg-white md:bg-transparent w-full md:w-auto absolute md:static left-0 top-full md:top-auto shadow md:shadow-none z-40 md:z-auto">
         <li><a class="px-3 py-2 rounded hover:bg-primary hover:text-white transition" href="index.html">Home</a></li>
         <li class="relative group">
           <a class="px-3 py-2 rounded hover:bg-primary hover:text-white transition cursor-pointer" tabindex="0">About Us <i class="fa fa-caret-down ml-1"></i></a>
@@ -155,7 +153,23 @@
     </div>
   </footer>
   <script>
-    // Desktop: Show dropdown on hover. Mobile: Show on click.
+    // Burger menu toggle for mobile
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    navToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      navMenu.classList.toggle('hidden');
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+    });
+    // Close nav menu when clicking outside (mobile)
+    document.addEventListener('click', function(e) {
+      if(window.innerWidth < 768 && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navMenu.classList.add('hidden');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    // Dropdown logic
     document.querySelectorAll('.group').forEach(function(el) {
       var dropdown = el.querySelector('ul');
       if (!dropdown) return;
