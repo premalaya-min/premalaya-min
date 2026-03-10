@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,46 +21,60 @@
   <title>Vision & Mission :: Premalaya Ministries</title>
 
   <style>
+    .vision-wrapper {
+      max-width: 1080px;
+      margin: 35px auto 50px;
+      padding: 0 15px;
+    }
+
     .vision-section {
-      max-width: 1100px;
-      margin: 40px auto;
       background: #fff;
       border: 1px solid #e3e3e3;
-      border-radius: 14px;
-      padding: 50px 55px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border-radius: 16px;
+      padding: 50px 60px;
+      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
     }
 
     .vision-main-title {
       text-align: center;
       color: #004d89;
-      font-size: 52px;
+      font-size: 50px;
       font-weight: 700;
-      margin-bottom: 45px;
+      margin-bottom: 12px;
+    }
+
+    .vision-subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 780px;
+      margin: 0 auto 42px;
     }
 
     .vision-title {
       color: #111;
-      font-size: 34px;
+      font-size: 30px;
       font-weight: 700;
-      margin-top: 10px;
-      margin-bottom: 22px;
+      margin-top: 8px;
+      margin-bottom: 20px;
       text-transform: uppercase;
     }
 
     .vision-text {
       font-size: 18px;
-      line-height: 1.9;
+      line-height: 1.95;
       color: #222;
       margin-bottom: 24px;
+      text-align: left;
     }
 
     .vision-italic {
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1.9;
       color: #222;
       font-style: italic;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
     .vision-highlight {
@@ -71,38 +86,68 @@
       color: #8fb3ea;
       font-style: italic;
       font-weight: 700;
-      font-size: 18px;
-      margin-bottom: 24px;
+      font-size: 22px;
+      text-align: center;
+      margin: 28px 0 28px;
     }
 
-    .mission-last-line {
-      font-size: 18px;
+    .mission-callout {
+      background: #f6f9fc;
+      border-left: 5px solid #004d89;
+      padding: 22px 24px;
+      border-radius: 10px;
+      margin-top: 24px;
+    }
+
+    .mission-callout p {
+      margin: 0;
+      font-size: 19px;
       line-height: 1.9;
       color: #222;
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #333;
+      font-style: italic;
+    }
+
+    .section-gap {
+      height: 20px;
     }
 
     @media (max-width: 768px) {
+      .vision-wrapper {
+        margin: 20px auto 30px;
+      }
+
       .vision-section {
         padding: 30px 20px;
-        margin: 20px 15px;
       }
 
       .vision-main-title {
         font-size: 34px;
       }
 
-      .vision-title {
-        font-size: 26px;
+      .vision-subtitle {
+        font-size: 16px;
+        margin-bottom: 30px;
       }
 
-      .vision-text,
-      .vision-italic,
-      .mission-last-line,
-      .mission-quote {
+      .vision-title {
+        font-size: 24px;
+      }
+
+      .vision-text {
         font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .vision-italic {
+        font-size: 17px;
+      }
+
+      .mission-quote {
+        font-size: 18px;
+      }
+
+      .mission-callout p {
+        font-size: 17px;
       }
     }
   </style>
@@ -159,47 +204,53 @@
   </nav>
 
   <!-- Main Content -->
-  <section class="vision-section">
-    <h1 class="vision-main-title">Vision &amp; Mission</h1>
+  <div class="vision-wrapper">
+    <section class="vision-section">
+      <h1 class="vision-main-title">Vision &amp; Mission</h1>
+      <p class="vision-subtitle">
+        Guided by faith, compassion, and service, Premalaya Ministries continues its mission to reach the unreached and bring hope to communities through the love of Christ.
+      </p>
 
-    <h2 class="vision-title">Vision:</h2>
+      <h2 class="vision-title">Vision</h2>
 
-    <p class="vision-text">
-      Apostle Paul wrote to the Colossians Church. We preach and teach that we present everybody perfect in Lord Jesus Christ, Colossians – 1:28. According to this verse Premalaya Ministries established in the year 2005 with a great vision.
-    </p>
+      <p class="vision-text">
+        Apostle Paul wrote to the Colossians Church. We preach and teach that we present everybody perfect in Lord Jesus Christ, Colossians – 1:28. According to this verse, Premalaya Ministries was established in the year 2005 with a great vision.
+      </p>
 
-    <p class="vision-italic">
-      To spread the Gospel to all mankind through HIS Love and Compassion
-    </p>
+      <p class="vision-italic">
+        To spread the Gospel to all mankind through HIS Love and Compassion.
+      </p>
 
-    <p class="vision-text">
-      Rev. Dr. A. ISAIAH believes that, the
-      <span class="vision-highlight">“Ministry takes place when divine resources meet the human needs through loving Channels to the Glory of Lord.”</span>
-      It is started to reach the unreached through Church Planting.
-    </p>
+      <p class="vision-text">
+        Rev. Dr. A. Isaiah believes that the
+        <span class="vision-highlight">“Ministry takes place when divine resources meet human needs through loving channels to the Glory of the Lord.”</span>
+        It began with a burden to reach the unreached through Church Planting.
+      </p>
 
-    <div style="height: 18px;"></div>
+      <div class="section-gap"></div>
 
-    <h2 class="vision-title">Mission:</h2>
+      <h2 class="vision-title">Mission</h2>
 
-    <p class="mission-quote">
-      “HIS LAST COMMAND IS OUR FIRST CONCERN“
-    </p>
+      <p class="mission-quote">
+        “HIS LAST COMMAND IS OUR FIRST CONCERN”
+      </p>
 
-    <p class="vision-text">
-      Our Mission is exactly what Mathew the tax collector wrote in chapter 28 verse 19.
-    </p>
+      <p class="vision-text">
+        Our mission is rooted in the command given in Matthew 28:19.
+      </p>
 
-    <p class="vision-text">
-      <span class="vision-italic">Therefore go and make disciples of all Nations, Baptizing them in the name of Father and of the Son and the Holy Spirit.</span>
-      The world cannot heal and turn the sorrow into joy except Jesus Christ
-    </p>
+      <p class="vision-text">
+        <span class="vision-highlight">Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit.</span>
+        The world cannot heal sorrow or turn it into joy apart from Jesus Christ.
+      </p>
 
-    <p class="mission-last-line">
-      The mission of Premalaya ministries is
-      <span class="vision-italic">“To heal the broken Hearted and turn their sorrows into joy, teach the people to know the Love of God and drove them to Jesus Christ.”</span>
-    </p>
-  </section>
+      <div class="mission-callout">
+        <p>
+          The mission of Premalaya Ministries is to heal the brokenhearted, turn sorrow into joy, teach people to know the Love of God, and draw them to Jesus Christ.
+        </p>
+      </div>
+    </section>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -260,3 +311,4 @@
   <script src="/assets/js/bootstrap-4-navbar.js"></script>
 </body>
 </html>
+```
