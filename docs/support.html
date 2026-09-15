@@ -135,28 +135,34 @@
     <div id="bank" class="bg-white rounded-xl shadow p-8 mb-8">
       <h2 class="text-2xl font-bold text-primary mb-6">Bank Details</h2>
       <div class="grid lg:grid-cols-2 gap-8">
-        <div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2"><i class="fa fa-inr text-accent"></i> For Indian Donors</h3>
-          <table class="w-full overflow-hidden rounded-lg">
+        <div class="border-2 border-accent rounded-xl overflow-hidden">
+          <div class="bg-accent text-white px-5 py-4">
+            <div class="text-xl font-bold flex items-center gap-2"><i class="fa fa-inr"></i> For Indian Donors</div>
+            <p class="text-xs text-gray-100 mt-1">Donations within India</p>
+          </div>
+          <table class="w-full">
             <tbody>
               <tr class="border-b border-gray-200"><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">Account Name</td><td class="p-3">PREMALAYA MINISTRIES</td></tr>
-              <tr class="border-b border-gray-200"><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">Account Number</td><td class="p-3 flex items-center justify-between gap-2">4919000100017583 <button class="copy-btn text-xs font-semibold text-white bg-primary hover:bg-secondary px-2 py-1 rounded transition" data-copy="4919000100017583">Copy</button></td></tr>
+              <tr class="border-b border-gray-200"><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">Account Number</td><td class="p-3">4919000100017583</td></tr>
               <tr class="border-b border-gray-200"><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">Bank Name</td><td class="p-3">Punjab National Bank</td></tr>
               <tr class="border-b border-gray-200"><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">Branch</td><td class="p-3">Avadi, Chennai</td></tr>
-              <tr><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">IFS Code</td><td class="p-3 flex items-center justify-between gap-2">PUNB0491900 <button class="copy-btn text-xs font-semibold text-white bg-primary hover:bg-secondary px-2 py-1 rounded transition" data-copy="PUNB0491900">Copy</button></td></tr>
+              <tr><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">IFS Code</td><td class="p-3">PUNB0491900</td></tr>
             </tbody>
           </table>
         </div>
-        <div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2"><i class="fa fa-globe text-accent"></i> For Foreign Donors</h3>
-          <table class="w-full overflow-hidden rounded-lg">
+        <div class="border-2 border-primary rounded-xl overflow-hidden">
+          <div class="bg-primary text-white px-5 py-4">
+            <div class="text-xl font-bold flex items-center gap-2"><i class="fa fa-globe"></i> For Foreign Donors</div>
+            <p class="text-xs text-gray-100 mt-1">International contributions · Registered under FCRA</p>
+          </div>
+          <table class="w-full">
             <tbody>
               <tr class="border-b border-gray-200"><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">Account Name</td><td class="p-3">PREMALAYA MINISTRIES</td></tr>
-              <tr class="border-b border-gray-200"><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">Account Number</td><td class="p-3 flex items-center justify-between gap-2">40122418115 <button class="copy-btn text-xs font-semibold text-white bg-primary hover:bg-secondary px-2 py-1 rounded transition" data-copy="40122418115">Copy</button></td></tr>
+              <tr class="border-b border-gray-200"><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">Account Number</td><td class="p-3">40122418115</td></tr>
               <tr class="border-b border-gray-200"><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">Bank Name</td><td class="p-3">State Bank of India</td></tr>
               <tr class="border-b border-gray-200"><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">Branch Code</td><td class="p-3">00691</td></tr>
-              <tr class="border-b border-gray-200"><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">IFS Code</td><td class="p-3 flex items-center justify-between gap-2">SBIN0000691 <button class="copy-btn text-xs font-semibold text-white bg-primary hover:bg-secondary px-2 py-1 rounded transition" data-copy="SBIN0000691">Copy</button></td></tr>
-              <tr><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">SWIFT Code</td><td class="p-3 flex items-center justify-between gap-2">SBININBB104 <button class="copy-btn text-xs font-semibold text-white bg-primary hover:bg-secondary px-2 py-1 rounded transition" data-copy="SBININBB104">Copy</button></td></tr>
+              <tr class="border-b border-gray-200"><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">IFS Code</td><td class="p-3">SBIN0000691</td></tr>
+              <tr><td class="p-3 font-semibold text-gray-700 bg-gray-50 w-1/3">SWIFT Code</td><td class="p-3">SBININBB104</td></tr>
             </tbody>
           </table>
         </div>
@@ -226,28 +232,6 @@
       document.querySelectorAll('.group ul').forEach(function(ul) {
         if(window.innerWidth < 768 && !ul.parentElement.contains(e.target)) {
           ul.classList.add('hidden');
-        }
-      });
-    });
-    // Copy bank details to clipboard
-    document.querySelectorAll('.copy-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var text = btn.getAttribute('data-copy');
-        function done() {
-          var original = btn.textContent;
-          btn.textContent = 'Copied!';
-          setTimeout(function() { btn.textContent = original; }, 1500);
-        }
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(done, done);
-        } else {
-          var ta = document.createElement('textarea');
-          ta.value = text;
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-          done();
         }
       });
     });
