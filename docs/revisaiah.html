@@ -97,30 +97,36 @@
       </p>
     </div>
   </section>
-  <footer class="bg-secondary text-white mt-12">
-    <div class="container mx-auto py-8">
-      <div class="grid md:grid-cols-3 gap-8">
+  <footer class="bg-secondary text-white mt-16">
+    <div class="container mx-auto py-12 px-4">
+      <div class="grid md:grid-cols-3 gap-10">
         <div>
-          <div class="text-xl font-bold mb-2">Premalaya Ministries</div>
-          <p class="text-sm leading-relaxed">Premalaya Social Development Society (PSDS), meaning "Temple of Love," is a registered non-profit organization founded in 1994 by Rev. Dr. A. Isaiah. Premalaya works with compassion and commitment to uplift the rural and urban poor, marginalized communities, scavengers, women, children, persons with disabilities, and other vulnerable sections of society.</p>
+          <div class="flex items-center mb-4">
+            <img src="assets/img/edslogo.png" alt="Premalaya Logo" class="h-12 w-auto bg-white rounded-lg p-1 shadow-md mr-3" />
+            <span class="font-serif font-bold uppercase text-lg md:text-xl tracking-[0.15em] leading-tight">Premalaya<br />Ministries</span>
+          </div>
+          <p class="text-sm leading-relaxed text-gray-300">Premalaya Ministries is a registered religious, educational and social trust born out of the vision received from the Lord to Rev. Dr. A. Isaiah. The organisation has been used by the Lord to expand HIS Kingdom in this world.</p>
         </div>
-        <div class="flex flex-col items-center">
-          <div class="text-lg font-bold mb-2">Our Location</div>
-          <img src='assets/img/location.png' class="w-24 h-24 object-contain mb-2" alt="Location" />
+        <div class="flex flex-col items-center md:items-start">
+          <div class="text-sm font-heading font-bold uppercase tracking-widest text-accent mb-4">Our Location</div>
+          <iframe title="Premalaya Ministries Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.2155649967326!2d80.06346431482386!3d13.14879839073979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52886f4ebf3d85%3A0xfaf3e286feb197bc!2sPremalaya%20Social%20Development%20Society!5e0!3m2!1sen!2sin!4v1593345629326!5m2!1sen!2sin" class="w-full max-w-xs rounded-lg border-0 shadow-md" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div>
-          <div class="text-lg font-bold mb-2">Contact Information</div>
-          <ul class="space-y-2 text-sm">
-            <li><i class="fa fa-map-marker mr-2"></i>9/A, 6th Street, 2nd Lane, Defence Enclave, Muthapudupet, IAF Avadi, Chennai - 600 055. India</li>
-            <li><i class="fa fa-phone mr-2"></i>+91 96000 37927</li>
-            <li><i class="fa fa-whatsapp mr-2"></i>+91 98842 04493</li>
-            <li><i class="fa fa-envelope mr-2"></i>premalayamin@yahoo.co.in</li>
+          <div class="text-sm font-heading font-bold uppercase tracking-widest text-accent mb-4">Contact Information</div>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start"><i class="fa fa-map-marker text-accent mt-1 mr-3"></i><span>9/A, 6th Street, 2nd Lane, Defence Enclave, Muthapudupet, IAF Avadi, Chennai - 600 055. India</span></li>
+            <li class="flex items-center"><i class="fa fa-phone text-accent mr-3"></i><span>+91 96000 37927</span></li>
+            <li class="flex items-center"><i class="fa fa-whatsapp text-accent mr-3"></i><span>+91 98842 04493</span></li>
+            <li class="flex items-center"><i class="fa fa-envelope text-accent mr-3"></i><span>premalayamin@yahoo.co.in</span></li>
           </ul>
         </div>
       </div>
-      <div class="text-center text-xs text-gray-300 mt-8">&copy; Premalaya Ministries. All rights reserved.</div>
+      <div class="border-t border-white/10 mt-10 pt-6 text-center text-xs text-gray-400">&copy; <span id="year"></span> Premalaya Ministries. All rights reserved.</div>
     </div>
   </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
   <script>
     // Desktop: Show dropdown on hover. Mobile: Show on click.
     document.querySelectorAll('.group').forEach(function(el) {
