@@ -118,26 +118,48 @@
     navToggle && navToggle.addEventListener('click', () => {
       navMenu.classList.toggle('hidden');
     });
-    // Dropdowns
+    // Dropdowns: desktop hover, mobile tap
+    const isDesktop = () => window.innerWidth >= 768;
     document.querySelectorAll('header nav ul > li.group').forEach(function (el) {
+      const menu = el.querySelector('ul');
+      if (!menu) return;
+      const openMenu = () => { menu.classList.remove('opacity-0', 'pointer-events-none'); menu.classList.add('opacity-100'); };
+      const closeMenu = () => { menu.classList.add('opacity-0', 'pointer-events-none'); menu.classList.remove('opacity-100'); };
       el.addEventListener('mouseenter', function () {
-        const menu = el.querySelector('ul');
-        if(menu) { menu.classList.remove('opacity-0', 'pointer-events-none'); menu.classList.add('opacity-100'); }
+        if (isDesktop()) openMenu();
       });
       el.addEventListener('mouseleave', function () {
-        const menu = el.querySelector('ul');
-        if(menu) { menu.classList.add('opacity-0', 'pointer-events-none'); menu.classList.remove('opacity-100'); }
+        if (isDesktop()) closeMenu();
       });
+      const btn = el.querySelector(':scope > button');
+      if (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelectorAll('header nav ul > li.group.open').forEach(function (other) {
+            if (other !== el) {
+              other.classList.remove('open');
+              const o = other.querySelector('ul');
+              if (o) { o.classList.add('opacity-0', 'pointer-events-none'); o.classList.remove('opacity-100'); }
+            }
+          });
+          if (menu.classList.contains('pointer-events-none')) {
+            el.classList.add('open');
+            openMenu();
+          } else {
+            el.classList.remove('open');
+            closeMenu();
+          }
+        });
+      }
     });
-    // Keyboard accessibility for dropdowns
-    document.querySelectorAll('header nav ul > li.group > button').forEach(function(btn) {
-      btn.addEventListener('focus', function() {
-        const menu = btn.parentElement.querySelector('ul');
-        if(menu) { menu.classList.remove('opacity-0', 'pointer-events-none'); menu.classList.add('opacity-100'); }
-      });
-      btn.addEventListener('blur', function() {
-        const menu = btn.parentElement.querySelector('ul');
-        if(menu) { menu.classList.add('opacity-0', 'pointer-events-none'); menu.classList.remove('opacity-100'); }
+    // Close dropdowns when tapping outside
+    document.addEventListener('click', function (e) {
+      document.querySelectorAll('header nav ul > li.group.open').forEach(function (el) {
+        if (!el.contains(e.target)) {
+          el.classList.remove('open');
+          const m = el.querySelector('ul');
+          if (m) { m.classList.add('opacity-0', 'pointer-events-none'); m.classList.remove('opacity-100'); }
+        }
       });
     });
   </script>
